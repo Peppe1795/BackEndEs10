@@ -28,12 +28,12 @@ public class App {
 		ev.save(primo);
 		ev.save(secondo);
 
-		Evento trovatoID = ev.findDataById(UUID.fromString("1f20c832-aa78-41b8-9d06-5f63f3dfe65b"));
+		Evento trovatoID = ev.findDataById(UUID.fromString("30b5481f-bd73-4be9-af74-9a0a2d441020"));
 		System.out.println(trovatoID);
 
-		ev.delete(UUID.fromString("1f20c832-aa78-41b8-9d06-5f63f3dfe65b"));
+		ev.delete(UUID.fromString("6b576885-7adc-43a1-ab17-b713b4ba6351"));
 
-		ev.refresh(UUID.fromString("7a6a8d06-2374-452f-b8fe-e3c77cd81779"));
+		ev.refresh(UUID.fromString("a73e9825-964a-4c37-9635-539f71490259"));
 
 		em.close();
 		emf.close();
