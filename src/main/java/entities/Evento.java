@@ -1,6 +1,6 @@
 package entities;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 import javax.persistence.Entity;
@@ -9,24 +9,30 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Gestione_eventi")
+@Table(name = "gestione_eventi")
+
 public class Evento {
+
 	@Id
 	@GeneratedValue
 	private UUID id;
+
 	private String titolo;
-	private Date dataEvento;
+	private LocalDate dataEvento;
 	private String descrizione;
 	private TipoEvento tipoEvento;
 	private int numeroMassimoPartecipanti;
 
-	public Evento(String titolo, Date dataEvento, String descrizione, TipoEvento tipoEvento,
+	public Evento(String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipoEvento,
 			int numeroMassimoPartecipanti) {
 		this.titolo = titolo;
 		this.dataEvento = dataEvento;
 		this.descrizione = descrizione;
 		this.tipoEvento = tipoEvento;
 		this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
+	}
+
+	public Evento() {
 	}
 
 	public String getTitolo() {
@@ -37,11 +43,11 @@ public class Evento {
 		this.titolo = titolo;
 	}
 
-	public Date getDataEvento() {
+	public LocalDate getDataEvento() {
 		return dataEvento;
 	}
 
-	public void setDataEvento(Date dataEvento) {
+	public void setDataEvento(LocalDate dataEvento) {
 		this.dataEvento = dataEvento;
 	}
 
@@ -67,6 +73,12 @@ public class Evento {
 
 	public void setNumeroMassimoPartecipanti(int numeroMassimoPartecipanti) {
 		this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
+	}
+
+	@Override
+	public String toString() {
+		return "Evento [id=" + id + ", titolo=" + titolo + ", dataEvento=" + dataEvento + ", descrizione=" + descrizione
+				+ ", tipoEvento=" + tipoEvento + ", numeroMassimoPartecipanti=" + numeroMassimoPartecipanti + "]";
 	}
 
 }
